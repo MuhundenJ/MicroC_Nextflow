@@ -1,0 +1,10 @@
+sample,fastq_1,fastq_2
+MJ21_1,./samples/read1_MJ21_1.fastq.gz,./samples/read2_MJ21_1.fastq.gz
+MJ21_2,./samples/read1_MJ21_2.fastq.gz,./samples/read2_MJ21_2.fastq.gz
+MJ21_3,./samples/read1_MJ21_3.fastq.gz,./samples/read2_MJ21_3.fastq.gz
+MJ21_4,./samples/read1_MJ21_4.fastq.gz,./samples/read2_MJ21_4.fastq.gz
+MJ21_5,./samples/read1_MJ21_5.fastq.gz,./samples/read2_MJ21_5.fastq.gz
+MJ21_6,./samples/read1_MJ21_6.fastq.gz,./samples/read2_MJ21_6.fastq.gz
+MJ21_7,./samples/read1_MJ21_7.fastq.gz,./samples/read2_MJ21_7.fastq.gz
+MJ21_8,./samples/read1_MJ21_8.fastq.gz,./samples/read2_MJ21_8.fastq.gz
+MJ21_pool,./samples/read1_MJ21_pool.fastq.gz,./samples/read2_MJ21_pool.fastq.gz

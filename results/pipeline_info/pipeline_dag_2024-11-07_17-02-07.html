@@ -1,0 +1,248 @@
+<!--
+  ~ Copyright 2013-2024, Seqera Labs
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<pre class="mermaid" style="text-align: center;">
+flowchart TB
+    subgraph " "
+    v4["Channel.from"]
+    v8["Channel.from"]
+    v13["Channel.from"]
+    v18["Channel.from"]
+    v23["Channel.from"]
+    v29["Channel.fromPath"]
+    v33["Channel.fromPath"]
+    v37["samplesheet"]
+    v67["save_unaligned"]
+    v68["sort_bam"]
+    v123["Channel.from"]
+    v180["ch_workflow_summary"]
+    end
+    subgraph NFCORE_HIC
+    subgraph HIC
+    subgraph INPUT_CHECK
+    v38([SAMPLESHEET_CHECK])
+    v40(( ))
+    end
+    subgraph PREPARE_GENOME
+    v47([BOWTIE2_BUILD])
+    v49([CUSTOM_GETCHROMSIZES])
+    v34(( ))
+    v66(( ))
+    v97(( ))
+    v101(( ))
+    v115(( ))
+    v153(( ))
+    end
+    v56([FASTQC])
+    subgraph HICPRO
+    subgraph HICPRO_MAPPING
+    v69([BOWTIE2_ALIGN])
+    v73([MAPPING_STATS_DNASE])
+    v77([COMBINE_MATES])
+    v75(( ))
+    end
+    v80([GET_VALID_INTERACTION_DNASE])
+    v91([MERGE_VALID_INTERACTION])
+    v94([MERGE_STATS])
+    v98([HICPRO2PAIRS])
+    v102([BUILD_CONTACT_MAPS])
+    v103([ICE_NORMALIZATION])
+    v82(( ))
+    v84(( ))
+    end
+    subgraph COOLER
+    v111([COOLER_MAKEBINS])
+    v117([COOLER_CLOAD])
+    v121([COOLER_BALANCE])
+    v131([COOLER_ZOOMIFY])
+    v135([COOLER_DUMP])
+    v137([SPLIT_COOLER_DUMP])
+    v5(( ))
+    v119(( ))
+    v134(( ))
+    end
+    v144([HIC_PLOT_DIST_VS_COUNTS])
+    subgraph COMPARTMENTS
+    v155([COOLTOOLS_EIGSCIS])
+    end
+    subgraph TADS
+    v164([COOLTOOLS_INSULATION])
+    v166(( ))
+    end
+    v171([CUSTOM_DUMPSOFTWAREVERSIONS])
+    v192([MULTIQC])
+    v48(( ))
+    v107(( ))
+    v187(( ))
+    v189(( ))
+    v190(( ))
+    v196(( ))
+    end
+    end
+    subgraph " "
+    v39[" "]
+    v50[" "]
+    v51[" "]
+    v57[" "]
+    v60[" "]
+    v70[" "]
+    v71[" "]
+    v74[" "]
+    v92[" "]
+    v95[" "]
+    v104[" "]
+    v105["iced_maps"]
+    v112[" "]
+    v132["mcool"]
+    v138[" "]
+    v145[" "]
+    v156["compartments"]
+    v167["tads"]
+    v172[" "]
+    v173[" "]
+    v174[" "]
+    v186["ch_multiqc_files"]
+    v193[" "]
+    v194[" "]
+    v195[" "]
+    v197[" "]
+    end
+    v4 --> v5
+    v8 --> v5
+    v13 --> v5
+    v18 --> v5
+    v23 --> v5
+    v29 --> v192
+    v29 --> v107
+    v33 --> v34
+    v37 --> v38
+    v38 --> v39
+    v38 --> v40
+    v34 --> v47
+    v47 --> v48
+    v47 --> v66
+    v34 --> v49
+    v49 --> v51
+    v49 --> v50
+    v49 --> v5
+    v49 --> v48
+    v49 --> v97
+    v49 --> v101
+    v49 --> v115
+    v49 --> v153
+    v40 --> v56
+    v56 --> v57
+    v56 --> v48
+    v56 --> v107
+    v56 --> v190
+    v40 --> v60
+    v67 --> v69
+    v68 --> v69
+    v40 --> v69
+    v66 --> v69
+    v69 --> v73
+    v69 --> v71
+    v69 --> v70
+    v69 --> v48
+    v69 --> v75
+    v73 --> v74
+    v73 --> v84
+    v75 --> v77
+    v77 --> v80
+    v77 --> v48
+    v77 --> v84
+    v80 --> v48
+    v80 --> v82
+    v80 --> v84
+    v82 --> v91
+    v91 --> v98
+    v91 --> v92
+    v91 --> v5
+    v91 --> v48
+    v91 --> v107
+    v84 --> v94
+    v94 --> v95
+    v94 --> v48
+    v94 --> v107
+    v97 --> v98
+    v98 --> v5
+    v98 --> v48
+    v5 --> v102
+    v101 --> v102
+    v102 --> v103
+    v103 --> v105
+    v103 --> v104
+    v103 --> v48
+    v5 --> v111
+    v111 --> v112
+    v111 --> v48
+    v5 --> v117
+    v115 --> v117
+    v117 --> v48
+    v117 --> v119
+    v119 --> v121
+    v121 --> v5
+    v121 --> v48
+    v121 --> v134
+    v123 --> v119
+    v119 --> v131
+    v131 --> v132
+    v131 --> v48
+    v134 --> v135
+    v135 --> v137
+    v135 --> v48
+    v137 --> v138
+    v137 --> v48
+    v5 --> v144
+    v144 --> v145
+    v144 --> v48
+    v5 --> v155
+    v34 --> v155
+    v153 --> v155
+    v155 --> v156
+    v155 --> v48
+    v5 --> v164
+    v164 --> v48
+    v164 --> v166
+    v166 --> v167
+    v48 --> v171
+    v171 --> v174
+    v171 --> v173
+    v171 --> v172
+    v180 --> v107
+    v180 --> v189
+    v107 --> v186
+    v107 --> v192
+    v187 --> v192
+    v189 --> v192
+    v190 --> v192
+    v192 --> v195
+    v192 --> v194
+    v192 --> v193
+    v192 --> v196
+    v196 --> v197
+
+</pre>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, maxTextSize: Number.MAX_SAFE_INTEGER, maxEdges: Number.MAX_SAFE_INTEGER });
+</script>
+</body>
+</html>

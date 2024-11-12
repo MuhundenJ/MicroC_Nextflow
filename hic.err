@@ -1,0 +1,4 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+WARNING: Could not load nf-core/config profiles: https://raw.githubusercontent.com/nf-core/configs/master/nfcore_custom.config

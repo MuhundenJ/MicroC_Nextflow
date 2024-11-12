@@ -1,0 +1,3 @@
+"NFCORE_HIC:HIC:HICPRO:ICE_NORMALIZATION":
+    python: 3.9.12
+    iced: 0.5.10
